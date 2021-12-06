@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 
 
-def square_matrix_simple(matrix=[]):
-    square_matrix = []
-    for i in matrix:
-        square_matrix.append(list(map(lambda x: x * x, i)))
-    return square_matrix
+def safe_print_list(my_list=[], x=0):
+    printed = 0
+    try:
+        for i in range(0, x):
+            print(my_list[i], end="")
+            printed += 1
+    except IndexError:
+        print()
+        return printed
+    print()
+    return printed
